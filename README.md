@@ -1,5 +1,25 @@
 # TagSelect
 
+This is a project that provides an Angular component to select items from a list in a tag-like manner. You will be able to import the module into your project and add the component in your HTML file.
+
+## Using the Component
+
+Here is a description of the inputs and outputs:
+
+### Inputs
+`tagMapping`: This is an object with two attributes, `value` and `display`. The value of the those attributes should be the names of the fields for the objects that the people will be selecting.
+
+So let's say your list of objects that you want the user to select has an `id` and a `name` (with possibly other attributes as well). Your tag mapping object should look like this: `{ value: 'id', display: 'name' }`. A list will be built inside the component that shows the possible tags and the selected tags using this mapping.
+
+`tagsToSelect`: The master list of items the user will be able to select. It doesn't matter what attributes the objects in the array have, as long as you pass in a `tagMapping` object that tells the component which attributes are the important ones.
+
+`tagItemIdentifierPlural`: A string (plural) to describe the tags. This means if you pass in nothing, the component will say "Availble Tags" and "Selected Tags". But if you pass in "Classes", it would say "Available Classes" and "Selected Classes".
+
+###Outputs
+`selectedTagsUpdated`: This output emits a list of items that have been selected. The array is of objects with two attributes, `id` and `value`. Use this list to determine what the user has selected.
+
+# Contributing to the Project
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.2.
 
 ## Development server
