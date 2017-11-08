@@ -8,7 +8,7 @@
 <h5>Available {{ tagItemIdentiferPlural ? tagItemIdentiferPlural : 'Tags' }}</h5>
 <ul class="possible-tag-list">
 	<li *ngFor="let tag of possibleTags" (click)="toggleTag(tag)">
-		<i class="fa" [ngClass]="{'fa-square-o': !isTagSelected(tag), 'fa-check-square-o': isTagSelected(tag)}"></i>
+		<i class="{{ iconClasses.iconPrefix }}" [ngClass]="setIconNgClassName(tag)"></i>
 		{{ tag.display }}
 	</li>
 </ul>
