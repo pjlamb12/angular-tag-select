@@ -1,0 +1,14 @@
+<h5>Selected {{ tagItemIdentiferPlural ? tagItemIdentiferPlural : 'Tags' }}</h5>
+<ul class="selected-tag-list">
+	<li *ngFor="let tag of selectedTags">
+		<i (click)="toggleTag(tag)" class="fa fa-times"></i>
+		{{ tag.display }}
+	</li>
+</ul>
+<h5>Available {{ tagItemIdentiferPlural ? tagItemIdentiferPlural : 'Tags' }}</h5>
+<ul class="possible-tag-list">
+	<li *ngFor="let tag of possibleTags" (click)="toggleTag(tag)">
+		<i class="fa" [ngClass]="{'fa-square-o': !isTagSelected(tag), 'fa-check-square-o': isTagSelected(tag)}"></i>
+		{{ tag.display }}
+	</li>
+</ul>
