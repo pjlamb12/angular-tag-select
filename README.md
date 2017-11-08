@@ -18,6 +18,12 @@ So let's say your list of objects that you want the user to select has an `id` a
 ###Outputs
 `selectedTagsUpdated`: This output emits a list of items that have been selected. The array is of objects with two attributes, `id` and `value`. Use this list to determine what the user has selected.
 
+## Styling the Component
+
+For now, overwrite the styles in this component by adding style rules in your app that overwrite the styles on the elements of this component. There are two `ul`s to style: `.selected-tag-list` and `.possible-tag-list`. Look in `src/app/tag-select/tag-select/tag-select.component.scss` to see the styles that are used by default.
+
+Also, be sure to include Font Awesome in your project for the selected and non selected states for the possible tag list. One of the `TODO`s will be to allow you to pass in the CSS classes for the icon font of your choice. That way you can pass in `'fa', 'fa-square-o', 'fa-check-o'` in for the two states, or whatever other classes you would like to use.
+
 # Contributing to the Project
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.2.
