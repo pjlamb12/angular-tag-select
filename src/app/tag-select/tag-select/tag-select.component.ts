@@ -10,6 +10,11 @@ export class TagSelectComponent implements OnInit {
 	@Input() tagsToSelect: any[];
 	@Input() tagMapping: Tag;
 	@Input() tagItemIdentiferPlural: string;
+	@Input() iconClasses: { iconPrefix: string, checkedIconClass: string, uncheckedIconClass: string } = {
+		iconPrefix: 'fa',
+		checkedIconClass: 'fa-check-square-o',
+		uncheckedIconClass: 'fa-square-o'
+	};
 	@Output() selectedTagsUpdated: EventEmitter<Tag[]> = new EventEmitter<Tag[]>();
 	public possibleTags: Tag[] = [];
 	public selectedTags: Tag[] = [];
@@ -40,5 +45,10 @@ export class TagSelectComponent implements OnInit {
 
 	isTagSelected(tag: Tag) {
 		return this.selectedTags.findIndex((selected: Tag) => selected.value === tag.value) > -1;
+	}
+
+	setIconNgClassName(tag: Tag) {
+		const isSelected: boolean = this.isTagSelected(tag);
+		return isSelected ? this.iconClasses.checkedIconClass : this.iconClasses.uncheckedIconClass;
 	}
 }
