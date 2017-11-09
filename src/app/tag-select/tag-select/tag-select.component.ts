@@ -18,6 +18,7 @@ export class TagSelectComponent implements OnInit {
 	@Output() selectedTagsUpdated: EventEmitter<Tag[]> = new EventEmitter<Tag[]>();
 	public possibleTags: Tag[] = [];
 	public selectedTags: Tag[] = [];
+	public filterText: string = '';
 
 	constructor() { }
 

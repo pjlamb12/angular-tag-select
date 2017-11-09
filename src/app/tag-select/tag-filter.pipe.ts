@@ -6,16 +6,8 @@ import { Tag } from './tag';
 })
 export class TagFilterPipe implements PipeTransform {
 
-  transform(tag: Tag, filterText: string): any {
-	const hasMatch: boolean =
-		tag.display.indexOf(filterText) > -1 ||
-		(
-			typeof tag.value === 'string' ?
-				tag.value.indexOf(filterText) > -1 :
-				tag.value === +(filterText)
-		);
-
-	return hasMatch;
+  transform(tags: Tag[], filterText: string): any {
+	  return tags.filter((tag: Tag) => tag.display.toLowerCase().indexOf(filterText) > -1 || (typeof tag.value === 'string' ? tag.value.toLowerCase().indexOf(filterText) > -1 : tag.value === +(filterText)));
   }
 
 }

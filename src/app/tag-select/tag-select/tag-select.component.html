@@ -6,8 +6,12 @@
 	</li>
 </ul>
 <h5>Available {{ tagItemIdentiferPlural ? tagItemIdentiferPlural : 'Tags' }}</h5>
+<div class="filter-input">
+	<label for="filterTextInput">Filter Tags in List</label>
+	<input name="filterTextInput" type="text" placeholder="Filter Tags in List" [(ngModel)]="filterText">
+</div>
 <ul class="possible-tag-list">
-	<li *ngFor="let tag of possibleTags" (click)="toggleTag(tag)">
+	<li *ngFor="let tag of possibleTags | tagFilter:filterText" (click)="toggleTag(tag)">
 		<i class="{{ iconClasses.iconPrefix }}" [ngClass]="setIconNgClassName(tag)"></i>
 		{{ tag.display }}
 	</li>
