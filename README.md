@@ -15,6 +15,8 @@ So let's say your list of objects that you want the user to select has an `id` a
 
 `tagItemIdentifierPlural`: A string (plural) to describe the tags. This means if you pass in nothing, the component will say "Availble Tags" and "Selected Tags". But if you pass in "Classes", it would say "Available Classes" and "Selected Classes".
 
+`tagsSelectedAtStart`: This is an array of the same elements that you passed in for `tagsToSelect`. These are items that should start out as selected when the component is loaded. It uses the same `tagMapping` object to find which ones should be selected.
+
 ###Outputs
 `selectedTagsUpdated`: This output emits a list of items that have been selected. The array is of objects with two attributes, `id` and `value`. Use this list to determine what the user has selected.
 
