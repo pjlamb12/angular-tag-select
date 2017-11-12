@@ -50,6 +50,10 @@ export class AppComponent {
 		},
 	];
 
+	public startingTags = [
+		{ id: 1, description: 'Item 1' }
+	]
+
 	tagsUpdated(list: any) {
 		console.log('list: ', list);
 	}

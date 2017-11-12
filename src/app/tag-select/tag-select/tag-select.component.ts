@@ -7,6 +7,7 @@ import { Tag } from '../tag';
 	styleUrls: ['./tag-select.component.scss']
 })
 export class TagSelectComponent implements OnInit {
+	@Input() tagsSelectedAtStart: any[];
 	@Input() tagsToSelect: any[];
 	@Input() tagMapping: Tag;
 	@Input() tagItemIdentiferPlural: string;
@@ -23,8 +24,23 @@ export class TagSelectComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit() {
+	}
+
+	ngOnChanges() {
 		if (this.tagsToSelect && this.tagsToSelect.length > 0) {
 			this.buildPossibleTagsList();
+		}
+		if (this.tagsToSelect && this.tagsSelectedAtStart) {
+			this.selectTagsAtStart();
+		}
+	}
+
+	selectTagsAtStart() {
+		for (const item of this.tagsSelectedAtStart) {
+			const found = this.possibleTags.find((tag: Tag) => tag.value === item[this.tagMapping.value]);
+			if (found) {
+				this.toggleTag(found);
+			}
 		}
 	}
 
