@@ -36,6 +36,10 @@ Not ideal, I know, to throw `!important` around, and on some rules you may not h
 
 Also, be sure to include Font Awesome in your project for the selected and non selected states for the possible tag list. One of the `TODO`s will be to allow you to pass in the CSS classes for the icon font of your choice. That way you can pass in `'fa', 'fa-square-o', 'fa-check-o'` in for the two states, or whatever other classes you would like to use.
 
+<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/YbV8KsHquCTU9663qJEGELrU/pjlamb12/angular-tag-select'>
+  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/YbV8KsHquCTU9663qJEGELrU/pjlamb12/angular-tag-select.svg' />
+</a>
+
 # Contributing to the Project
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.2.
