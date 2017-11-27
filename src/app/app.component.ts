@@ -54,7 +54,14 @@ export class AppComponent {
 		{ id: 1, description: 'Item 1' }
 	]
 
+	public selectedTags;
+
+	addDynamicTag(newTagDisplay: string) {
+		this.possibleTags.push({ id: this.possibleTags.length + 1, description: newTagDisplay });
+		this.startingTags = [...this.selectedTags, { id: this.possibleTags.length, description: newTagDisplay }];
+	}
+
 	tagsUpdated(list: any) {
-		console.log('list: ', list);
+		this.selectedTags = [...list];
 	}
 }
