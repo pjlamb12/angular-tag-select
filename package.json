@@ -10,7 +10,7 @@
 		"type": "git",
 		"url": "https://github.com/pjlamb12/angular-tag-select"
 	},
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"license": "MIT",
 	"keywords": ["angular", "tags", "tag-select"],
 	"scripts": {
