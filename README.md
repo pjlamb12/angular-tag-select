@@ -17,8 +17,22 @@ So let's say your list of objects that you want the user to select has an `id` a
 
 `tagsSelectedAtStart`: This is an array of the same elements that you passed in for `tagsToSelect`. These are items that should start out as selected when the component is loaded. It uses the same `tagMapping` object to find which ones should be selected.
 
+`canDynamicallyAdd`: A boolean value that determines if the end user can dynamically add a new tag. Defaults to false.
+
 ###Outputs
 `selectedTagsUpdated`: This output emits a list of items that have been selected. The array is of objects with two attributes, `id` and `value`. Use this list to determine what the user has selected.
+
+`dynamicallyAddNewTag`: This output emits a string value of the tag that the user wants to dynamically add. Nothing is actually going to be done in the component; you need to add the new item to your list in whatever way you need to. Add it to the `tagsToSelect` input array, and to the `tagsSelectedAtStart` array and the selection will be automatically updated. Here's an example of how you can add it to the test:
+
+```
+// Parent component, parent.component.ts
+addDynamicTag(newTagDisplay: string) {
+    this.possibleTags.push({ id: this.possibleTags.length + 1, description: newTagDisplay });
+	// this.selectedTags is updated when the component emits an array on selectedTagsUpdated
+    this.startingTags = [...this.selectedTags, { id: this.possibleTags.length, description: newTagDisplay }];
+}
+```
+Obviously you may need to call a database function that adds the new item and sets its ID or whatever needs to be done. The component itself, however, will just display the possible tags and the selected tags.
 
 ## Styling the Component
 
@@ -35,10 +49,6 @@ You can overwrite the styles like this:
 Not ideal, I know, to throw `!important` around, and on some rules you may not have to, but you will to change border colors and margins, etc. that are already set.
 
 Also, be sure to include Font Awesome in your project for the selected and non selected states for the possible tag list. One of the `TODO`s will be to allow you to pass in the CSS classes for the icon font of your choice. That way you can pass in `'fa', 'fa-square-o', 'fa-check-o'` in for the two states, or whatever other classes you would like to use.
-
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/YbV8KsHquCTU9663qJEGELrU/pjlamb12/angular-tag-select'>
-  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/YbV8KsHquCTU9663qJEGELrU/pjlamb12/angular-tag-select.svg' />
-</a>
 
 # Contributing to the Project
 
