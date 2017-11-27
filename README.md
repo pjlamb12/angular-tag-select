@@ -17,6 +17,18 @@ So let's say your list of objects that you want the user to select has an `id` a
 
 `tagsSelectedAtStart`: This is an array of the same elements that you passed in for `tagsToSelect`. These are items that should start out as selected when the component is loaded. It uses the same `tagMapping` object to find which ones should be selected.
 
+`iconClasses`: An object with four attributes: `iconPrefix`, `checkedIconClass`, `uncheckedIconClass`, `dynamicallyAddIconClass`. They default to the following:
+
+```
+{
+    iconPrefix: 'fa',
+    checkedIconClass: 'fa-check-square-o',
+    uncheckedIconClass: 'fa-square-o',
+    dynamicallyAddIconClass: 'fa-plus',
+}
+```
+The default is to use FontAwesome, but you can use whatever you're using in your app, by passing in the correct icon class names.
+
 `canDynamicallyAdd`: A boolean value that determines if the end user can dynamically add a new tag. Defaults to false.
 
 ###Outputs
