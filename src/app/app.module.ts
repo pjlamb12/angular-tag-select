@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 import { TagSelectModule } from './tag-select/tag-select.module';
 
 import { AppComponent } from './app.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
