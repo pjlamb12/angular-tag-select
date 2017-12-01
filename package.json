@@ -5,21 +5,15 @@
 		"name": "Preston Lamb",
 		"url": "http://www.prestonlamb.com"
 	},
-	"maintainers": [
-		"Preston Lamb"
-	],
+	"maintainers": ["Preston Lamb"],
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/pjlamb12/angular-tag-select"
 	},
 	"homepage": "http://ats.oss.prestonlamb.com",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"license": "MIT",
-	"keywords": [
-		"angular",
-		"tags",
-		"tag-select"
-	],
+	"keywords": ["angular", "tags", "tag-select"],
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
