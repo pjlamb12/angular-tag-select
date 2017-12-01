@@ -12,6 +12,7 @@
 		"type": "git",
 		"url": "https://github.com/pjlamb12/angular-tag-select"
 	},
+	"homepage": "http://ats.oss.prestonlamb.com",
 	"version": "1.0.5",
 	"license": "MIT",
 	"keywords": [
