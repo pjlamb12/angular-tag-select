@@ -1,5 +1,5 @@
 <app-navigation></app-navigation>
-<div class="container-fluid">
+<div class="container">
 	<div class="row">
 		<div class="col">
 			<h1>Angular Tag Select Demo</h1>
@@ -17,15 +17,15 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md">
+		<div class="col-lg">
 			<h5>Can Dynamically Add Tags</h5>
 			<tag-select (dynamicallyAddNewTag)="addDynamicTag($event)" [canDynamicallyAdd]="true" [tagsSelectedAtStart]="startingTags"
 			 [tagMapping]="tagMapping" [tagsToSelect]="possibleTags" (selectedTagsUpdated)="tagsUpdated($event)"></tag-select>
 			<br />
 		</div>
-		<div class="col-md">
+		<div class="col-lg">
 			<h5>Can't Dynamically Add Tags</h5>
-			<tag-select [tagsSelectedAtStart]="startingTags" [tagMapping]="tagMapping" [tagsToSelect]="possibleTags" (selectedTagsUpdated)="tagsUpdated($event)"></tag-select>
+			<tag-select [tagsSelectedAtStart]="startingTags" [tagMapping]="tagMapping" [tagsToSelect]="possibleTags2" (selectedTagsUpdated)="tagsUpdated($event)"></tag-select>
 			<br />
 		</div>
 	</div>
