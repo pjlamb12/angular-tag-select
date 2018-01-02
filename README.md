@@ -2,11 +2,14 @@
 
 This is a project that provides an Angular component to select items from a list in a tag-like manner. You will be able to import the module into your project and add the component in your HTML file.
 
+View a [demo here](ats.oss.prestonlamb.com) on the project homepage or [here as a Plunk](https://plnkr.co/edit/ZLhuFyArvp1JgG3aap2v?p=preview).
+
 ## Using the Component
 
 Here is a description of the inputs and outputs, as well as how to style the component:
 
 ### Inputs
+
 `tagMapping`: This is an object with two attributes, `value` and `display`. The value of the those attributes should be the names of the fields for the objects that the people will be selecting.
 
 So let's say your list of objects that you want the user to select has an `id` and a `name` (with possibly other attributes as well). Your tag mapping object should look like this: `{ value: 'id', display: 'name' }`. A list will be built inside the component that shows the possible tags and the selected tags using this mapping.
@@ -27,6 +30,7 @@ So let's say your list of objects that you want the user to select has an `id` a
     dynamicallyAddIconClass: 'fa-plus',
 }
 ```
+
 The default is to use FontAwesome, but you can use whatever you're using in your app, by passing in the correct icon class names.
 
 `canDynamicallyAdd`: A boolean value that determines if the end user can dynamically add a new tag. Defaults to false.
@@ -44,6 +48,7 @@ addDynamicTag(newTagDisplay: string) {
     this.startingTags = [...this.selectedTags, { id: this.possibleTags.length, description: newTagDisplay }];
 }
 ```
+
 Obviously you may need to call a database function that adds the new item and sets its ID or whatever needs to be done. The component itself, however, will just display the possible tags and the selected tags.
 
 ## Styling the Component
