@@ -11,7 +11,7 @@
 		"url": "https://github.com/pjlamb12/angular-tag-select"
 	},
 	"homepage": "http://ats.oss.prestonlamb.com",
-	"version": "1.1.1",
+	"version": "1.1.2",
 	"license": "MIT",
 	"keywords": ["angular", "tags", "tag-select"],
 	"scripts": {

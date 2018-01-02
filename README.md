@@ -2,7 +2,7 @@
 
 This is a project that provides an Angular component to select items from a list in a tag-like manner. You will be able to import the module into your project and add the component in your HTML file.
 
-View a [demo here](ats.oss.prestonlamb.com) on the project homepage or [here as a Plunk](https://plnkr.co/edit/ZLhuFyArvp1JgG3aap2v?p=preview).
+View a [demo here](http://ats.oss.prestonlamb.com) on the project homepage or [here as a Plunk](https://plnkr.co/edit/ZLhuFyArvp1JgG3aap2v?p=preview).
 
 ## Using the Component
 
