@@ -15,6 +15,14 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "angular-tag-select-lib": [
+        "dist/angular-tag-select-lib"
+      ],
+      "angular-tag-select-lib/*": [
+        "dist/angular-tag-select-lib/*"
+      ]
+    }
   }
 }
