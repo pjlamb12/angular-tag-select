@@ -1,3 +1,23 @@
-<p>
-  tag-select works!
-</p>
+<h5>Selected {{ tagItemIdentiferPlural ? tagItemIdentiferPlural : 'Tags' }}</h5>
+<ul class="selected-tag-list">
+	<li *ngFor="let tag of selectedTags">
+		<i (click)="toggleTag(tag)" class="fa fa-times"></i>
+		{{ tag.display }}
+	</li>
+</ul>
+<h5>Available {{ tagItemIdentiferPlural ? tagItemIdentiferPlural : 'Tags' }}</h5>
+<div class="filter-input">
+	<label for="filterTextInput">Filter Tags in List</label>
+	<input (keyup)="countFilteredTags()" name="filterTextInput" type="text" placeholder="Filter Tags in List" [(ngModel)]="filterText">
+</div>
+<ul class="possible-tag-list">
+	<li *ngFor="let tag of possibleTags | tagFilter:filterText" (click)="toggleTag(tag)">
+		<i class="{{ iconClasses.iconPrefix }}" [ngClass]="setIconNgClassName(tag)"></i>
+		{{ tag.display }}
+	</li>
+	<li *ngIf="filteredTagsLength === 0" (click)="dynamicallyAddTag()">
+		<i class="{{ iconClasses.iconPrefix + ' ' + iconClasses.dynamicallyAddIconClass }}"></i>
+		Add new tag
+		<strong>{{ filterText }}</strong>
+	</li>
+</ul>
