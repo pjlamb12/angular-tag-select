@@ -3,16 +3,22 @@ import { Tag } from '../tag';
 import { TagFilterPipe } from '../tag-filter.pipe';
 
 @Component({
-	selector: 'tag-select',
+	selector: 'ats-tag-select',
 	templateUrl: './tag-select.component.html',
-	styleUrls: ['./tag-select.component.scss']
+	styleUrls: ['./tag-select.component.scss'],
 })
 export class TagSelectComponent implements OnInit {
 	@Input() tagsSelectedAtStart: any[];
 	@Input() tagsToSelect: any[];
 	@Input() tagMapping: Tag;
 	@Input() tagItemIdentiferPlural: string;
-	@Input() iconClasses: { iconPrefix: string, checkedIconClass: string, uncheckedIconClass: string, dynamicallyAddIconClass: string } = {
+	@Input()
+	iconClasses: {
+		iconPrefix: string;
+		checkedIconClass: string;
+		uncheckedIconClass: string;
+		dynamicallyAddIconClass: string;
+	} = {
 		iconPrefix: 'fa',
 		checkedIconClass: 'fa-check-square-o',
 		uncheckedIconClass: 'fa-square-o',
@@ -26,10 +32,9 @@ export class TagSelectComponent implements OnInit {
 	public filterText: string = '';
 	public filteredTagsLength: number;
 
-	constructor() { }
+	constructor() {}
 
-	ngOnInit() {
-	}
+	ngOnInit() {}
 
 	ngOnChanges() {
 		if (this.tagsToSelect && this.tagsToSelect.length > 0) {
@@ -53,9 +58,7 @@ export class TagSelectComponent implements OnInit {
 	selectTagsAtStart() {
 		console.log('starting with selected tags: ', this.tagsSelectedAtStart);
 		for (const item of this.tagsSelectedAtStart) {
-			console.log('item: ', item);
 			const found = this.possibleTags.find((tag: Tag) => tag.value === item[this.tagMapping.value]);
-			console.log('found: ', found);
 			if (found) {
 				this.toggleTag(found);
 			}
