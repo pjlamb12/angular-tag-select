@@ -1,140 +1,20 @@
-<app-navigation></app-navigation>
-<div class="container">
-	<div class="row">
-		<div class="col">
-			<h1>Angular Tag Select Demo</h1>
-			<p>
-				Angular Tag Select is an angular component library that allows your users to select 0 to many items from a list in a tag-like
-				manner. The predefined styles are extremely limited so that they can be overwritten by the developer in the parent component
-				where this is used. There is also an option to allow the user to add a tag dynamically, if that's something that you
-				want them to do.
-			</p>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col">
-			<h2>Demo</h2>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-lg">
-			<h5>Can Dynamically Add Tags</h5>
-			<tag-select (dynamicallyAddNewTag)="addDynamicTag($event)" [canDynamicallyAdd]="true" [tagsSelectedAtStart]="startingTags"
-			 [tagMapping]="tagMapping" [tagsToSelect]="possibleTags" (selectedTagsUpdated)="tagsUpdated($event)"></tag-select>
-			<br />
-		</div>
-		<div class="col-lg">
-			<h5>Can't Dynamically Add Tags</h5>
-			<tag-select [tagsSelectedAtStart]="startingTags" [tagMapping]="tagMapping" [tagsToSelect]="possibleTags2" (selectedTagsUpdated)="tagsUpdated($event)"></tag-select>
-			<br />
-		</div>
-	</div>
-	<div class="row">
-		<div class="col">
-			<h2>API</h2>
-			<p>
-				Here is the "how-to" of implementing this in your project:
-			</p>
-			<h3>
-				Inputs
-			</h3>
-			<p>
-				<code>tagMapping</code>: This is an object with two attributes,
-				<code>value</code> and
-				<code>display</code>. The value of the those attributes should be the names of the fields for the objects that the people will be selecting.
-				So let's say your list of objects that you want the user to select has an
-				<code>id</code> and a
-				<code>name</code> (with possibly other attributes as well). Your tag mapping object should look like this:
-			</p>
-			<pre>
-cosnt tagMapping = &#123;
-	value: 'id',
-	display: 'name'
-&#125;
-			</pre>
-			<p>A list will be built inside the component that shows the possible tags and the selected tags using this mapping.</p>
-			<p>
-				<code>tagsToSelect</code>: The master list of items the user will be able to select. It doesn't matter what attributes the objects in the array
-				have, as long as you pass in a
-				<code>tagMapping</code> object that tells the component which attributes are the important ones.
-			</p>
-			<p>
-				<code>tagItemIdentifierPlural</code>: A string (plural) to describe the tags. This means if you pass in nothing, the component will say "Availble Tags" and
-				"Selected Tags". But if you pass in "Classes", it would say "Available Classes" and "Selected Classes".
-			</p>
-			<p>
-				<code>tagsSelectedAtStart</code>: This is an array of the same elements that you passed in for
-				<code>tagsToSelect</code>. These are items that should start out as selected when the component is loaded. It uses the same
-				<code>tagMapping</code> object to find which ones should be selected.
-			</p>
-			<p>
-				<code>iconClasses</code>: An object with four attributes:
-				<code>iconPrefix</code>,
-				<code>checkedIconClass</code>,
-				<code>uncheckedIconClass</code>,
-				<code>dynamicallyAddIconClass</code>. They default to the following:
-			</p>
-			<pre>
-const iconClasses = &#123;
-	iconPrefix: 'fa',
-	checkedIconClass: 'fa-check-square-o',
-	uncheckedIconClass: 'fa-square-o',
-	dynamicallyAddIconClass: 'fa-plus'
-&#125;
-			</pre>
-			<p>
-				The default is to use FontAwesome, but you can use whatever you're using in your app, by passing in the correct icon class
-				names.
-			</p>
-			<p>
-				<code>canDynamicallyAdd</code>: A boolean value that determines if the end user can dynamically add a new tag. Defaults to false.
-			</p>
-			<h3>Outputs</h3>
-			<p>
-				<code>selectedTagsUpdated</code>: This output emits a list of items that have been selected. The array is of objects with two attributes,
-				<code>id</code> and
-				<code>value</code>. Use this list to determine what the user has selected.
-			</p>
-			<p>
-				<code>dynamicallyAddNewTag</code>: This output emits a string value of the tag that the user wants to dynamically add. Nothing is actually going to be
-				done in the component; you need to add the new item to your list in whatever way you need to. Add it to the
-				<code>tagsToSelect</code> input array, and to the
-				<code>tagsSelectedAtStart</code> array and the selection will be automatically updated. Here's an example of how you can add it to the test:
-			</p>
-			<pre>
-// Parent component, parent.component.ts
-addDynamicTag(newTagDisplay: string) &#123;
-	this.possibleTags.push(&#123; id: this.possibleTags.length + 1, description: newTagDisplay &#125;);
-	// this.selectedTags is updated when the component emits an array on selectedTagsUpdated
-	this.startingTags = [...this.selectedTags, &#123; id: this.possibleTags.length, description: newTagDisplay &#125;];
-&#125;
-			</pre>
-			<p>
-				Obviously you may need to call a database function that adds the new item and sets its ID or whatever needs to be done. The
-				component itself, however, will just display the possible tags and the selected tags.
-			</p>
-			<h3>Styling the Component</h3>
-			<p>
-				For now, overwrite the styles in this component by adding style rules in your app that overwrite the styles on the elements
-				of this component. There are two
-				<code>ul</code>s to style:
-				<code>.selected-tag-list</code> and
-				<code>.possible-tag-list</code>. Look in
-				<code>src/app/tag-select/tag-select/tag-select.component.scss</code> to see the styles that are used by default.
-			</p>
-			<p>
-				You can overwrite the styles like this:
-			</p>
-			<pre>
-::ng-deep .selected-tag-list li &#123;
-	border-color: red !important;
-&#125;
-			</pre>
-			<p>
-				Not ideal, I know, to throw
-				<code>!important</code> around, and on some rules you may not have to, but you will to change border colors and margins, etc. that are already
-				set.
-			</p>
-		</div>
-	</div>
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
 </div>
+<h2>Here are some links to help you start: </h2>
+<ul>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
+  </li>
+</ul>
+
