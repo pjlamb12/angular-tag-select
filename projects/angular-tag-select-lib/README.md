@@ -6,7 +6,7 @@ View a [demo here](http://ats.oss.prestonlamb.com) on the project homepage or [h
 
 ## Using the Component
 
-There are two different components exported from this module: `TagSelectComponent` and `TagSelectTrComponent`. `TagSelectTrComponent`, selector `ats-tag-select-tr`, uses `TemplateRef`s in angular to allow the developer who's implementing the component to have full control over the styles. The making of the list of possible tags, selecting tags, and removing tags is all done in the component. But all visual work is done by the implementing developer. The inputs and outputs below marked with an asterisk are on both components in the module.
+There are two different components exported from this module: `TagSelectComponent` and `TagSelectTrComponent`. `TagSelectTrComponent`, selector `ats-tag-select-tr`, uses `TemplateRef`s in angular to allow the developer who's implementing the component to have full control over the styles. The making of the list of possible tags, selecting tags, and removing tags is all done in the component. But all visual work is done by the implementing developer. [Visit this StackBlitz project](https://stackblitz.com/edit/template-ref-examples) to view a demo of this in action. The inputs and outputs below marked with an asterisk are on both components in the module.
 
 Here is a description of the inputs and outputs, as well as how to style the component:
 
