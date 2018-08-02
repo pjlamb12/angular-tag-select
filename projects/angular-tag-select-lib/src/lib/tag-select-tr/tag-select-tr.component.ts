@@ -64,8 +64,6 @@ export class TagSelectTrComponent implements OnInit {
 
 	public ctx: any = {
 		tagsSelectedAtStart: this.tagsSelectedAtStart,
-		tagsToSelect: this.tagsToSelect,
-		tagMapping: this.tagMapping,
 		possibleTags: this.possibleTags,
 		selectedTags: this.selectedTags,
 		fns: {
