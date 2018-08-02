@@ -1,0 +1,17 @@
+.possible-tag-list {
+	list-style-type: none;
+	padding: 0;
+	display: grid;
+	width: 500px;
+	grid-gap: 15px;
+	grid-template-columns: repeat(2, 1fr);
+	justify-content: space-around;
+	border: 1px solid green;
+	padding: 15px;
+	max-height: 150px;
+	overflow: scroll;
+}
+li {
+	display: block;
+	width: 100%;
+}

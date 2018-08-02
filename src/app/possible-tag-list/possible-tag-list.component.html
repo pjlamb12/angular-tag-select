@@ -1,0 +1,5 @@
+<ul class="possible-tag-list">
+	<li *ngFor="let tag of possibleTags">
+		<button [ngClass]="{'btn-primary': !isTagSelected(tag), 'btn-success': isTagSelected(tag)}" (click)="tagSelected(tag)" class="btn btn-block">{{ tag.display }}</button>
+	</li>
+</ul>
