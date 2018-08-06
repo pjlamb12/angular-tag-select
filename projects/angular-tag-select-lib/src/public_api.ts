@@ -3,3 +3,4 @@
  */
 
 export * from './lib/angular-tag-select-lib.module';
+export * from './lib/tag';
