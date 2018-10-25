@@ -13,7 +13,7 @@
 		"url": "https://github.com/pjlamb12/angular-tag-select"
 	},
 	"homepage": "http://ats.oss.prestonlamb.com",
-	"version": "2.1.0",
+	"version": "2.1.1",
 	"license": "MIT",
 	"keywords": [
 		"angular",
@@ -21,7 +21,7 @@
 		"tag-select"
 	],
 	"peerDependencies": {
-		"@angular/common": "^6.0.0-rc.0 || ^6.0.0",
-		"@angular/core": "^6.0.0-rc.0 || ^6.0.0"
+		"@angular/common": ">=6.0.0",
+		"@angular/core": ">=6.0.0"
 	}
 }

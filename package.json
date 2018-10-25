@@ -1,6 +1,6 @@
 {
 	"name": "angular-tag-select",
-	"version": "2.1.0",
+	"version": "2.1.1",
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
@@ -8,6 +8,7 @@
 		"build:lib": "ng build --prod angular-tag-select-lib",
 		"pack:lib": "cd dist/angular-tag-select-lib && npm pack",
 		"package": "npm run build:lib && npm run pack:lib",
+		"deploy": "npm run package && npm publish dist/angular-tag-select-lib",
 		"test": "ng test",
 		"lint": "ng lint",
 		"e2e": "ng e2e"
